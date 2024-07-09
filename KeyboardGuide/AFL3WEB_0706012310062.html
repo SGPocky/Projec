@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+    <title>KB</title>
+  </head>
+
+  <body
+    class="font-mono text-[#1f271b] [text-shadow:_0_1px_0_rgb(0_0_0_/_20%)] bg-[#cccccc] backdrop-filter-none"
+    id="DarkTHING"
+  >
+    <script>
+      $(document).ready(function () {
+        var y = document.getElementById("BuildingTheKeeb");
+        var By = document.getElementById("buttonBuildingTheKeeb");
+        var x = document.getElementById("AboutMe");
+        var Bx = document.getElementById("buttonAboutMe");
+        var z = document.getElementById("Gallery");
+        var Bz = document.getElementById("buttonGallery");
+        var Bg = document.getElementById("divButton");
+        y.style.display = "none";
+        By.classList =
+          "border-none bg-none hover:p-0.5 hover:rounded-lg hover:bg-[#d9d9d9] hover:text-[#1f271b] hover:[text-shadow:_0_1px_0_rgb(0_0_0_/0%)]";
+
+        Bz.classList = "border-none bg-none hover:bg-none hover:border-none";
+        Bg.classList =
+          "hover:p-0.5 hover:bg-[#d9d9d9] hover:rounded-lg hover:inline hover:text-[#1f271b] hover:[text-shadow:_0_1px_0_rgb(0_0_0_/0%)]";
+
+        x.style.display = "block";
+        z.style.display = "none";
+        Bx.classList =
+          "rounded-lg p-0.5 bg-[#283622] hover:bg-[#d9d9d9] hover:text-[#1f271b] hover:[text-shadow:_0_1px_0_rgb(0_0_0_/0%)]";
+        document.getElementById("Hilang").style.display = "none";
+        if ($(window).width() < 380) {
+          $("#gitPic").hide();
+        } else {
+          $("#gitPic").show();
+        }
+      });
+    </script>
+
+    <!-- FIXME: BUTTONS -->
+    <div>
+      <button
+        data-drawer-target="sidebar-multi-level-sidebar"
+        type="button"
+        class="block fixed items-center bottom-0 right-0 p-2 m-10 ms-3 text-sm text-gray-500 rounded-lg z-50 md:hidden"
+        id="topButton"
+      >
+        <script>
+          $(window).on("resize", function () {
+            if ($(window).width() > 767) {
+              $("#sidebar-multi-level-sidebar").show();
+              $("#暗く黒く").removeClass(
+                "bg-gray-400 ring-2 focus:ring-2 focus:ring-gray-200 dark:text-gray-400 blur-none"
+              );
+            } else {
+              $("#sidebar-multi-level-sidebar").hide();
+              $("#暗く黒く").removeClass(
+                "bg-gray-400 ring-2 focus:ring-2 focus:ring-gray-200 dark:text-gray-400 blur-sm md:blur-none"
+              );
+            }
+            if ($(window).width() < 380) {
+              $("#gitPic").hide();
+            } else {
+              $("#gitPic").show();
+            }
+          });
+
+          $("#topButton").click(function () {
+            $("#sidebar-multi-level-sidebar").slideToggle("slow");
+            $("#暗く黒く").toggleClass(
+              "bg-gray-400 focus:ring-2 focus:ring-gray-200 dark:text-gray-400 blur-sm md:blur-none"
+            );
+          });
+        </script>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Hamburger_icon_white.svg/1200px-Hamburger_icon_white.svg.png"
+          class="w-10 h-15 z-50 border-2 border-[#283622] bg-[#283622] rounded-md p-2"
+        />
+      </button>
+
+      <aside
+        id="sidebar-multi-level-sidebar"
+        class="hidden fixed w-full h-cover bg-[#1f271b] text-[#e3e4e3] p-0 pl-10 text-lg rounded-lg -mt-5 z-50 md:block md:top-0 md:left-0 md:z-40 md:w-64 md:h-screen md:w-cover md:mt-0 md:rounded-none"
+        aria-label="Sidebar"
+      >
+        <div class="pt-10 grid grid-rows-1 grid-flow-col">
+          <img
+            src="https://raw.githubusercontent.com/JLU423/t/main/.github/workflows/pf.png"
+            class="h-20 w-20 inline row-span-2 rounded-full"
+          />
+          <h1
+            class="text-right md:text-left font-bold text-lg text-wrap pr-10 gap-2 mt-4"
+          >
+            Jason <br class=>Leonardo
+          </h1>
+        </div>
+        <br />
+        <div>
+          <a
+            href="#AboutMe"
+            onclick="ShowAbout()"
+            class="hover:bg-[#d9d9d9] hover:rounded-xl hover:border-2 text-center"
+            id="buttonAboutMe"
+          >
+            About</a
+          >
+          <br />
+          <a
+            href="#BuildingTheKeeb"
+            onclick="ShowBuild()"
+            class="rounded-lg p-0.5 bg-none hover:bg-[#d9d9d9]"
+            id="buttonBuildingTheKeeb"
+            >Building the Keeb</a
+          >
+          <br />
+          <div class="text-sm ml-10" id="Hilang">
+            <a
+              href="#Materials"
+              onclick="Close()"
+              class="hover:bg-[#d9d9d9] hover:rounded-xl hover:p-0.5 hover:text-[#1f271b] [text-shadow:_0_1px_0_rgb(0_0_0_/0%)] text-center"
+              id="buttonMaterials"
+              >&gt; Materials</a
+            >
+            <br />
+
+            <a
+              href="#ReasoningBehind"
+              onclick="Close()"
+              class="hover:bg-[#d9d9d9] hover:rounded-xl hover:p-0.5 hover:text-[#1f271b] [text-shadow:_0_1px_0_rgb(0_0_0_/0%)] text-center"
+              id="buttonReasoning"
+              >&gt; Parts Reasoning</a
+            >
+            <br />
+
+            <a
+              href="#WiringDiagram"
+              onclick="Close()"
+              class="hover:bg-[#d9d9d9] hover:rounded-xl hover:p-0.5 hover:text-[#1f271b] [text-shadow:_0_1px_0_rgb(0_0_0_/0%)] text-center"
+              id="buttonWiringDiagram"
+              >&gt; Wiring Diagram</a
+            >
+            <br />
+
+            <a
+              href="#HowToSolder"
+              onclick="Close()"
+              class="hover:bg-[#d9d9d9] hover:rounded-xl hover:p-0.5 hover:text-[#1f271b] [text-shadow:_0_1px_0_rgb(0_0_0_/0%)] text-center"
+              id="buttonHowToSolder"
+              >&gt; To Solder</a
+            >
+            <br />
+
+            <a
+              href="#SettingFirmware"
+              onclick="Close()"
+              class="hover:bg-[#d9d9d9] hover:rounded-xl hover:p-0.5 hover:text-[#1f271b] [text-shadow:_0_1px_0_rgb(0_0_0_/0%)] text-center"
+              id="buttonSettingFirmware"
+              >&gt; Setting Firmware</a
+            >
+            <br />
+          </div>
+
+          <div class="grid grid-cols-2 pb-5">
+            <a
+              href="#Gallery"
+              onclick="ShowGallery(), Close()"
+              class="grid hover:bg-[#d9d9d9] hover:rounded-xl hover:border-2 text-left"
+              id="buttonGallery"
+            >
+              <div id="divButton">Gallery</div></a
+            >
+            <div
+              class="m-0.5 rounded-lg text-[#d9d9d9] inline text-sm text-right pr-10 md:absolute md:right-0 md:bottom-0 md:pr-20 md:pb-8 md:text-md"
+              id="folded"
+            >
+              <h1>
+                <img
+                  src="https://raw.githubusercontent.com/JLU423/t/main/.github/workflows/git.png"
+                  class="inline w-5 h-5"
+                  id="gitPic"
+                />
+
+                <a
+                  href="https://get.vial.today/"
+                  class="border-b-2 border-[#d9d9d9] hover:border-[#69aac6] hover:text-[#69aac6]"
+                  >Vial</a
+                >
+                .
+                <a
+                  href="https://github.com/"
+                  class="border-b-2 border-[#d9d9d9] hover:border-[#69aac6] hover:text-[#69aac6]"
+                  >Github</a
+                >
+              </h1>
+              <h1 class="text-center text-xs pl-16 md:pl-0">©2024 JLH42</h1>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- FIXME: CONTENTS -->
+    <div id="暗く黒く" class="z-40">
+      <div
+        class="p-1 bg-[#1f271b] text-white md:text-[#1f271b] md:bg-[#6B6B6B] text-center"
+      >
+        YOU ARE AT THE TOP
+      </div>
+      <!-- TODO: ABOUT ME -->
+      <div class="p-50 pt-0 md:pl-64 md:pt-0">
+        <section id="AboutMe">
+          <div class="pl-10 pt-10">
+            <div class="bg-[#283622] size-fit rounded-lg">
+            <h1 class="text-4xl inline-block text-[#e3e4e3] rounded-lg ml-2 ">About Me</h1>
+            <img
+              src="https://raw.githubusercontent.com/JLU423/t/main/.github/workflows/v.jpg"
+              class="pl-4 w-50 h-20 inline-block rounded-lg"
+            />
+          </div>
+            <br />
+            <p class="p-10 pt-2 pl-0 text-lg">
+              Hi, I am Jason Leonardo. Graphic design is my passion. i'm a
+              computer science student at universitas ciputra. Currently
+              learning object oriented programming, Web Development, and
+              Database. I build keyboards as a hobby
+            </p>
+
+            <div>
+              <h2 class="inline-block text-2xl border-b-2 border-[#3b0e0f] text-[#8A4E4F]  [text-shadow:_0_1px_0_rgb(0_0_0_/0%)]">
+                Skills
+              </h2>
+            </div>
+
+            <div class="grid grid-flow-row pt-4 md:grid-flow-col">
+              <div class="ml-4 md:mx-auto">
+                <h1 class="md:text-center md:text-xl">Multimedia</h1>
+                <div class="block pr-28 md:pr-0">
+                  <img
+                    src="https://raw.githubusercontent.com/JLU423/t/main/.github/workflows/image.png"
+                    class="rounded-lg object-scale-down"
+                  />
+                </div>
+              </div>
+              <div class="pt-8 md:pt-20 ml-30 ml-4 mr-10 pl-30">
+                <h1 class="pl-24 md:text-center md:text-xl">Programming</h1>
+                <div class="block pl-24">
+                  <img
+                    src="https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2023/07/computer-coding.jpg"
+                    class="rounded-lg object-scale-down"
+                  />
+                </div>
+              </div>
+            </div>
+            <h1 class="container">&nbsp;</h1>
+            <h1 class="container">&nbsp;</h1>
+            <h1 class="container">&nbsp;</h1>
+          </div>
+        </section>
+
+        <!-- TODO: BUILDING THE KEEB -->
+        <section id="BuildingTheKeeb" class="block">
+          <div class="pl-5 pr-5 md:pl-10 md:pr-5 pt-10 ">
+            <h1 class="text-4xl inline-block  text-[#e3e4e3] bg-[#283622] rounded-lg">
+              Designing and Building a RP2040 Stabless 40% Keyboard
+            </h1>
+            <p class="mt-7 text-md inline-block">
+              Making a Handwired keyboard had always seemed daunting to me as it
+              all looks difficult “building” and making, but it is actually
+              quite simple but requires alot of time so i will show you the
+              simplest way of building this keyboard shown in the first page of
+              the gallery
+            </p>
+
+            <section id="Materials" class="block">
+              <div class="">
+                <p
+                  class="pt-10 text-xl inline-block border-b-2 border-[#3B0E0F] text-[#8A4E4F]  [text-shadow:_0_1px_0_rgb(0_0_0_/0%)]"
+                >
+                  Materials
+                </p>
+                <ul class="pt-4 pl-10 list-disc">
+                  <li>RP2040 Zero x1</li>
+                  <li>Copper wires (10 meters)</li>
+                  <li>Keycaps x42</li>
+                  <li>Switches x42</li>
+                  <li>Acrylic Plates</li>
+                  <li>Screws x8</li>
+                  <li>Diodes x42</li>
+                </ul>
+              </div>
+            </section>
+
+            <section id="ReasoningBehind" class="block">
+              <div class="pb-10">
+                <p
+                  class="pt-10 pb-0 text-xl inline-block border-b-2 border-[#3B0E0F] text-[#8A4E4F]  [text-shadow:_0_1px_0_rgb(0_0_0_/0%)]"
+                >
+                  Reasoning Behind
+                </p>
+                <p class="pt-4">
+                  RP2040 zero is one of the smallest for its price that still
+                  could make a keyboard and also is very strong making it not a
+                  problem for messing around and adding all of the features that
+                  existed. The copper wires will be used to wire the keyboard
+                  switches together to make a matrix grid which i will explain
+                  later on. The keycaps is self explanatory and you could choose
+                  any of it and this is also the same for the switches. As for
+                  the Acrylic plates this will be used to house the keyboard
+                  case with each other and you should ask your local laser
+                  printer person to print it for you by sending them a file that
+                  i linked or another case file if you would like a different
+                  design. The diodes will be used to differentiate between lots
+                  of the keys and allows the keyboard to detect more than 1 key
+                  at a time without issue.
+                </p>
+              </div>
+            </section>
+
+            <section id="WiringDiagram" class="block">
+              <div class="pr-4">
+                <p
+                  class="pt-10 text-xl inline-block border-b-2 border-[#3B0E0F] text-[#8A4E4F]  [text-shadow:_0_1px_0_rgb(0_0_0_/0%)]"
+                >
+                  Wiring Diagram
+                </p>
+
+                <img
+                  src="https://raw.githubusercontent.com/JLU423/t/main/.github/workflows/p.jpg"
+                  class="pt-4"
+                />
+                <p class="pt-4">
+                  Cables are connected in a matrix grid like this:<br />
+                  The yellow line resembles the columns while the Blue line
+                  resembles the rows. As for the diodes it will be placed in the
+                  other side of the keyboard switch and connected with the blue
+                  wires on the black one facing up (Orange-black color)
+                </p>
+                <br />
+                <div class="grid grid-flow-col">
+                  <div>
+                    <p class=" text-[#8A4E4F] md:pr-40 md:text-center">Diode Direction</p>
+                    <img
+                      src="https://diotlabs.daraghbyrne.me/docs/controlling-outputs-motors/assets/diode/diode_1244.jpg"
+                      class="w-50 h-50 pr-8 md:pr-40"
+                    />
+                  </div>
+                  <div>
+                    <p class="text-[#8A4E4F] md:text-center">RP2040 PINS</p>
+                    <img
+                      src="https://www.waveshare.com/w/A6Y79bcq/Kdy80nYY.php?f=RP2040-Zero-details-7.jpg&width=600"
+                    />
+                  </div>
+                </div>
+                <p class="pt-4">
+                  Now you can pick from any GPxx Pin from the RP2040 PINS
+                  diagram that you want to use and connect it between each
+                  column and each row of the keyboard
+                </p>
+              </div>
+            </section>
+
+            <section id="HowToSolder" class="block">
+              <div class="">
+                <p
+                  class="pt-10 text-xl inline-block border-b-2 border-[#3B0E0F] text-[#8A4E4F]  [text-shadow:_0_1px_0_rgb(0_0_0_/0%)]"
+                >
+                  How to Solder
+                </p>
+                <p class="pt-4">
+                  In case you don't know how to solder, all you need to do is to
+                  have solder wires on your right hand(remember to have a decent
+                  amount of solder wire length between your hand and the
+                  soldering iron), and the soldering iron on your left hand.
+                  Then on the point where there needs to be a connection, you
+                  touch the soldering iron with the solder wire and then a
+                  connection would be made. To check whether the connection is
+                  made, you could try to wiggle the cable a bit, if it doesn't
+                  move then the connection is made.
+                </p>
+              </div>
+            </section>
+
+            <section id="SettingFirmware" class="block">
+              <div class="">
+                <p
+                  class="pt-10 text-xl inline-block border-b-2 border-[#3B0E0F] text-[#8A4E4F]  [text-shadow:_0_1px_0_rgb(0_0_0_/0%)]"
+                >
+                  Setting Firmware
+                </p>
+                <p class="pt-4">
+                  For this stage you would need to download the File that i sent
+                  you, then it would be all good then flash it with the QMK-MSYS
+                  application
+                </p>
+              </div>
+            </section>
+            <h1 class="container">&nbsp;</h1>
+            <h1 class="container">&nbsp;</h1>
+          </div>
+        </section>
+
+        <!-- TODO: GALLERY -->
+        <section id="Gallery" class="block">
+          <div class="md:pl-4">
+            <h1 class="pt-10 pl-5 text-5xl inline-block">Gallery</h1>
+            <div class="flex flex-center size-cover mx-auto">
+              <h2 class="text-center text-3xl p-10 bg-[#1f271b] text-[#e3e4e3] m-4 rounded-lg mx-auto">Current 40% Keyboard</h2>
+            </div>
+            <div class="grid grid-rows-1 grid-cols-3 pr-5 pl-5 md:mr-5">
+              <img
+                src="https://raw.githubusercontent.com/JLU423/t/main/.github/workflows/1.jpg"
+                class="grid col-span-3 rounded-lg"
+              />
+              <div class="flex flex-row">
+                <img
+                  src="https://raw.githubusercontent.com/JLU423/t/main/.github/workflows/2.jpg"
+                  class="rounded-2xl p-3"
+                />
+                <img
+                  src="https://raw.githubusercontent.com/JLU423/t/main/.github/workflows/3.jpg"
+                  class="rounded-2xl p-3"
+                />
+                <img
+                  src="https://raw.githubusercontent.com/JLU423/t/main/.github/workflows/4.jpg"
+                  class="rounded-2xl p-3"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <script>
+          function Close() {
+            if ($(window).width() < 767) {
+              $("#sidebar-multi-level-sidebar").hide();
+              $("#暗く黒く").removeClass(
+                "bg-gray-400 ring-2 focus:ring-2 focus:ring-gray-200 dark:text-gray-400 blur-sm md:blur-none"
+              );
+            }
+          }
+
+          function ShowAbout() {
+            var y = document.getElementById("AboutMe");
+            var x = document.getElementById("BuildingTheKeeb");
+            var z = document.getElementById("Gallery");
+            var By = document.getElementById("buttonAboutMe");
+            var Bx = document.getElementById("buttonBuildingTheKeeb");
+            var Bz = document.getElementById("buttonGallery");
+            var Bg = document.getElementById("divButton");
+            var Bgh = document.getElementById("buttonGithub");
+
+            y.style.display = "block";
+            By.classList =
+              "rounded-lg p-0.5 bg-[#283622] hover:bg-[#d9d9d9] hover:rounded-lg  hover:text-[#1f271b] hover:[text-shadow:_0_1px_0_rgb(0_0_0_/0%)]";
+            x.style.display = "none";
+            Bx.classList =
+              "border-none hover:p-0.5 hover:bg-[#d9d9d9] bg-none hover:rounded-lg   hover:text-[#1f271b] hover:[text-shadow:_0_1px_0_rgb(0_0_0_/0%)]";
+            z.style.display = "none";
+            Bz.classList =
+              "border-none bg-none hover:bg-none hover:border-none";
+            Bg.classList =
+              "hover:p-0.5 hover:bg-[#d9d9d9] hover:rounded-lg hover:inline   hover:text-[#1f271b] hover:[text-shadow:_0_1px_0_rgb(0_0_0_/0%)]";
+            Bgh.classList =
+              "grid text-right md:p-10 pr-10 md:bottom-0 md:left-0 md:absolute";
+          }
+
+          function ShowBuild() {
+            var y = document.getElementById("BuildingTheKeeb");
+            var x = document.getElementById("AboutMe");
+            var z = document.getElementById("Gallery");
+            var By = document.getElementById("buttonBuildingTheKeeb");
+            var Bx = document.getElementById("buttonAboutMe");
+            var Bz = document.getElementById("buttonGallery");
+            var Bg = document.getElementById("divButton");
+            var Bgh = document.getElementById("buttonGithub");
+
+            y.style.display = "block";
+            By.classList =
+              "rounded-lg p-0.5 bg-[#283622] hover:bg-[#d9d9d9]   hover:text-[#1f271b] hover:[text-shadow:_0_1px_0_rgb(0_0_0_/0%)]";
+            x.style.display = "none";
+            Bx.classList =
+              "border-none hover:p-0.5 hover:bg-[#d9d9d9] bg-none hover:rounded-lg   hover:text-[#1f271b] hover:[text-shadow:_0_1px_0_rgb(0_0_0_/0%)]";
+            z.style.display = "none";
+            Bz.classList =
+              "border-none bg-none hover:bg-none hover:border-none   hover:text-[#1f271b] hover:[text-shadow:_0_1px_0_rgb(0_0_0_/0%)]";
+            Bg.classList =
+              "hover:p-0.5 hover:bg-[#d9d9d9] hover:rounded-lg hover:inline   hover:text-[#1f271b] hover:[text-shadow:_0_1px_0_rgb(0_0_0_/0%)]";
+            Bgh.classList =
+              "grid text-right md:p-10 pr-10 md:bottom-0 md:left-0 md:absolute";
+          }
+
+          function ShowGallery() {
+            var y = document.getElementById("Gallery");
+            var x = document.getElementById("AboutMe");
+            var z = document.getElementById("BuildingTheKeeb");
+            var By = document.getElementById("buttonGallery");
+            var Bx = document.getElementById("buttonAboutMe");
+            var Bz = document.getElementById("buttonBuildingTheKeeb");
+            var Bg = document.getElementById("divButton");
+            var Bgh = document.getElementById("buttonGithub");
+
+            y.style.display = "block";
+            By.classList =
+              "border-none bg-none hover:bg-none hover:border-none   hover:text-[#1f271b] hover:[text-shadow:_0_1px_0_rgb(0_0_0_/0%)]";
+            Bg.classList =
+              "rounded-lg p-0.5 bg-[#283622] inline  hover:p-0.5 hover:bg-[#d9d9d9] hover:rounded-lg hover:inline   hover:text-[#1f271b] hover:[text-shadow:_0_1px_0_rgb(0_0_0_/0%)]";
+
+            x.style.display = "none";
+            Bx.classList =
+              "border-none hover:p-0.5 hover:bg-[#d9d9d9] bg-none hover:rounded-lg hover:text-[#1f271b] hover:[text-shadow:_0_1px_0_rgb(0_0_0_/0%)]";
+            z.style.display = "none";
+            Bz.classList =
+              "border-none hover:p-0.5 hover:bg-[#d9d9d9] bg-none hover:rounded-lg hover:text-[#1f271b] hover:[text-shadow:_0_1px_0_rgb(0_0_0_/0%)]";
+            Bgh.classList =
+              "grid text-right md:p-10 pr-10 md:bottom-0 md:left-0 md:absolute";
+          }
+        </script>
+
+        <script>
+          $("a[href='#AboutMe']").click(function () {
+            if ($(window).width() < 767) {
+              $("#sidebar-multi-level-sidebar").slideUp(600);
+              $("#暗く黒く").removeClass(
+                "bg-gray-400 ring-2 focus:ring-2 focus:ring-gray-200 dark:text-gray-400 blur-sm md:blur-none"
+              );
+            }
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            if ($("#Hilang").css("display") == "block") {
+              $("#Hilang").slideUp(400);
+            }
+            return false;
+          });
+          $("a[href='#BuildingTheKeeb']").click(function () {
+            if ($(window).width() < 767) {
+              $("#sidebar-multi-level-sidebar").slideUp(600);
+              $("#暗く黒く").removeClass(
+                "bg-gray-400 ring-2 focus:ring-2 focus:ring-gray-200 dark:text-gray-400 blur-sm md:blur-none"
+              );
+            }
+            $("#Hilang").slideDown(400);
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
+          });
+
+          $("a[href='#Gallery']").click(function () {
+            if ($(window).width() < 767) {
+              $("#sidebar-multi-level-sidebar").slideUp(600);
+              $("#暗く黒く").removeClass(
+                "bg-gray-400 ring-2 focus:ring-2 focus:ring-gray-200 dark:text-gray-400 blur-sm md:blur-none"
+              );
+            }
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+            if ($("#Hilang").css("display") == "block") {
+              $("#Hilang").slideUp(400);
+            }
+            return false;
+          });
+        </script>
+      </div>
+
+      <!--TODO: placeholder -->
+    </div>
+    <!-- <h1 class="container text-center text-[#cccccc] bg-[#1f271b]">end</h1> -->
+  </body>
+</html>
